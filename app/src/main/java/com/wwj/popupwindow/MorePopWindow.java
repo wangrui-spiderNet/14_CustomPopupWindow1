@@ -34,7 +34,7 @@ public class MorePopWindow extends PopupWindow {
 		this.setBackgroundDrawable(dw);
 		// mPopupWindow.setAnimationStyle(android.R.style.Animation_Dialog);
 		// 设置SelectPicPopupWindow弹出窗体动画效果
-		this.setAnimationStyle(R.style.AnimationPreview);
+		this.setAnimationStyle(R.style.popWindow_animation);
 
 	}
 
