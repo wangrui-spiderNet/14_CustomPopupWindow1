@@ -7,6 +7,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import com.wwj.popupwindow.entity.ItemBean;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends Activity implements OnClickListener {
     private Button setButton;
     private Button addButton;
@@ -33,14 +38,29 @@ public class MainActivity extends Activity implements OnClickListener {
                 morePopWindow.showPopupWindow(setButton);
                 break;
             case R.id.btnAdd:
-                AddPopWindow addPopWindow = new AddPopWindow(MainActivity.this);
-                addPopWindow.showPopupWindow(addButton);
+//                AddPopWindow addPopWindow = new AddPopWindow(MainActivity.this);
+//                addPopWindow.showPopupWindow(addButton);
+
+                List<ItemBean> itemBeanList=new ArrayList<ItemBean>();
+                for(int i=0;i<10;i++){
+                    ItemBean bean=new ItemBean();
+                    bean.setSelected(false);
+                    bean.setId(i+"");
+                    bean.setName("老王"+i);
+                    itemBeanList.add(bean);
+                }
+
+                BottomSelectPop pop=new BottomSelectPop(this,itemBeanList);
+
+                pop.showAtLocation(this.getWindow().getDecorView(),Gravity.BOTTOM,0,0);
+
                 break;
 
             case R.id.btnShare:
                 CustomShareBoard customShareBoard = new CustomShareBoard(this);
                 customShareBoard.showAtLocation(this.getWindow().getDecorView(), Gravity.BOTTOM, 0, 0);
                 break;
+
 
             default:
                 break;
