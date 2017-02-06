@@ -24,12 +24,14 @@ public class BottomSelectPop extends PopupWindow implements View.OnClickListener
 
     private List<ItemBean> itemBeans;
     private LayoutInflater inflater;
+    private SelectListener listener;
 
-    public BottomSelectPop(Context context, List<ItemBean> itemBeans) {
+    public BottomSelectPop(Context context, List<ItemBean> itemBeans,SelectListener listener) {
         super(context);
         this.itemBeans = itemBeans;
         inflater = LayoutInflater.from(context);
         init(context);
+        this.listener = listener;
     }
 
     private void init(Context context){
@@ -106,7 +108,7 @@ public class BottomSelectPop extends PopupWindow implements View.OnClickListener
                             itemBeans.get(i).setSelected(false);
                         }
                     }
-
+                    listener.setSelectItem(position);
                     notifyDataSetChanged();
 
                 }
@@ -126,6 +128,10 @@ public class BottomSelectPop extends PopupWindow implements View.OnClickListener
                 item_layout = (RelativeLayout)view.findViewById(R.id.item_layout);
             }
         }
+    }
+
+    interface SelectListener {
+        void setSelectItem(int position);
     }
 
 }

@@ -1,9 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/animation_layout_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clickable="true"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <!--
          <include android:id="@+id/topLayout"
@@ -66,6 +67,37 @@
                 android:background="@drawable/actionbar_more_icon" />
         </LinearLayout>
     </RelativeLayout>
+
+    <com.wwj.popupwindow.CommonWidgetButton
+        android:layout_width="200dp"
+        android:layout_height="120dp"
+        android:background="@color/transparent"
+        app:boarder_color="@color/green"
+        app:fill_color="@color/gray_bg"
+        app:boarder_size="3dp"
+        android:layout_centerInParent="true"
+        app:corner_radius="70"
+        />
+
+    <com.wwj.popupwindow.CommonWidgetButton
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:background="@color/transparent"
+        app:boarder_color="@color/green"
+        app:boarder_size="3dp"
+        android:layout_centerInParent="true"
+        app:corner_radius="50"
+        />
+
+    <com.wwj.popupwindow.CommonWidgetButton
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:background="@color/transparent"
+        app:fill_color="@color/gray_bg"
+        app:boarder_size="3dp"
+        android:layout_centerInParent="true"
+        app:corner_radius="50"
+        />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"

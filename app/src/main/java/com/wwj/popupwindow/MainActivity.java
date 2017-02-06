@@ -6,13 +6,14 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.wwj.popupwindow.entity.ItemBean;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends Activity implements OnClickListener ,BottomSelectPop.SelectListener{
     private Button setButton;
     private Button addButton;
     private Button btnShare;
@@ -41,18 +42,7 @@ public class MainActivity extends Activity implements OnClickListener {
 //                AddPopWindow addPopWindow = new AddPopWindow(MainActivity.this);
 //                addPopWindow.showPopupWindow(addButton);
 
-                List<ItemBean> itemBeanList=new ArrayList<ItemBean>();
-                for(int i=0;i<10;i++){
-                    ItemBean bean=new ItemBean();
-                    bean.setSelected(false);
-                    bean.setId(i+"");
-                    bean.setName("老王"+i);
-                    itemBeanList.add(bean);
-                }
-
-                BottomSelectPop pop=new BottomSelectPop(this,itemBeanList);
-
-                pop.showAtLocation(this.getWindow().getDecorView(),Gravity.BOTTOM,0,0);
+                showSelectItem();
 
                 break;
 
@@ -65,5 +55,25 @@ public class MainActivity extends Activity implements OnClickListener {
             default:
                 break;
         }
+    }
+
+    private void showSelectItem() {
+        List<ItemBean> itemBeanList=new ArrayList<ItemBean>();
+        for(int i=0;i<10;i++){
+            ItemBean bean=new ItemBean();
+            bean.setSelected(false);
+            bean.setId(i+"");
+            bean.setName("老王"+i);
+            itemBeanList.add(bean);
+        }
+
+        BottomSelectPop pop=new BottomSelectPop(this,itemBeanList,this);
+
+        pop.showAtLocation(this.getWindow().getDecorView(), Gravity.BOTTOM,0,0);
+    }
+
+    @Override
+    public void setSelectItem(int position) {
+        Toast.makeText(this, "选中"+position, Toast.LENGTH_SHORT).show();
     }
 }

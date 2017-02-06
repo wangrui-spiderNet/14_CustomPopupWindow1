@@ -17,4 +17,20 @@
 
     <color name="gray">#999999</color>
     <color name="line_color">#DBDBDB</color>
+
+    <color name="red">#FF0000</color>
+    <color name="gold">#FFD700</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="blue">#0000FF</color>
+    <color name="purple">#800080</color>
+    <color name="pink">#FFC0CB</color>
+    <color name="orange">#FFA500</color>
+    <color name="lemonyellow">#FFFACD</color>
+    <color name="graywhite">#F5F5F5</color>
+    <color name="grayslate">#708090</color>
+    <color name="lightblue">#0083FF</color>
+    <color name="gray_bg">#FFDCDCDC</color>
+    <color name="gray_txt">#FF606060</color>
+    <color name="gray_txt_light">#FFC8C8C8</color>
+    <color name="translucent">#B9000000</color>
 </resources>

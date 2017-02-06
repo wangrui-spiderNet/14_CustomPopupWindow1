@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CommonWidgetButton">
+        <attr name="fill_color" format="color"/>
+        <attr name="boarder_color" format="color"/>
+        <attr name="boarder_size" format="dimension"/>
+        <attr name="corner_radius" format="float"/>
+    </declare-styleable>
+
+</resources>
