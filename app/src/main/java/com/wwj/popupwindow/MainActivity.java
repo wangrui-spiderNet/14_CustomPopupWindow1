@@ -3,7 +3,6 @@ package com.wwj.popupwindow;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -35,26 +34,6 @@ public class MainActivity extends Activity implements OnClickListener ,BottomSel
         setButton.setOnClickListener(this);
         addButton.setOnClickListener(this);
         btnShare.setOnClickListener(this);
-        widgetButton.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                return false;
-            }
-        });
-
-        widgetButton2.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                return false;
-            }
-        });
-
-        widgetButton3.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                return false;
-            }
-        });
 
     }
 

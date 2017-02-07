@@ -8,11 +8,10 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.view.View;
 import android.widget.Button;
 
 /**
- * 自定义Button，可以实现空心，实心，带边框的实心按钮
+ * 自定义Button，可以实现空心，实心，带边框的实心按钮，想要点击效果，可以设置presscolor属性
  * Created by wangrui on 2017/2/6.
  */
 
@@ -25,6 +24,7 @@ public class CommonWidgetButton extends Button {
     private float cornerRadius;
     private RectF rectF;
     private Paint mPaint;
+    private String ACTION = "";
 
     public CommonWidgetButton(Context context) {
         super(context);
@@ -104,26 +104,18 @@ public class CommonWidgetButton extends Button {
 
     }
 
-    private String ACTION = "";
-
     @Override
-    public void setOnTouchListener(OnTouchListener l) {
+    public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            ACTION = "ACTION_DOWN";
+            invalidate();
+        } else if (event.getAction() == MotionEvent.ACTION_UP) {
+            ACTION = "ACTION_UP";
+            invalidate();
+        }
 
-        l = new OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                    ACTION = "ACTION_DOWN";
-                    invalidate();
-                } else if (event.getAction() == MotionEvent.ACTION_UP) {
-                    ACTION = "ACTION_UP";
-                    invalidate();
-                }
+        return super.onTouchEvent(event);
 
-                return false;
-            }
-        };
-
-        super.setOnTouchListener(l);
     }
+
 }
