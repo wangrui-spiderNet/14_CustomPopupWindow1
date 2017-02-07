@@ -5,6 +5,7 @@
         <attr name="boarder_color" format="color"/>
         <attr name="boarder_size" format="dimension"/>
         <attr name="corner_radius" format="float"/>
+        <attr name="press_color" format="color"/>
     </declare-styleable>
 
 </resources>

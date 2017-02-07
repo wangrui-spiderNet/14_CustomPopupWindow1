@@ -3,6 +3,7 @@ package com.wwj.popupwindow;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -17,7 +18,9 @@ public class MainActivity extends Activity implements OnClickListener ,BottomSel
     private Button setButton;
     private Button addButton;
     private Button btnShare;
-
+    private CommonWidgetButton widgetButton;
+    private CommonWidgetButton widgetButton2;
+    private CommonWidgetButton widgetButton3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,9 +29,33 @@ public class MainActivity extends Activity implements OnClickListener ,BottomSel
         setButton = (Button) findViewById(R.id.btnSet);
         addButton = (Button) findViewById(R.id.btnAdd);
         btnShare = (Button) findViewById(R.id.btnShare);
+        widgetButton= (CommonWidgetButton) findViewById(R.id.widgetbutton);
+        widgetButton2 = (CommonWidgetButton) findViewById(R.id.widgetbutton2);
+        widgetButton3 = (CommonWidgetButton) findViewById(R.id.widgetbutton3);
         setButton.setOnClickListener(this);
         addButton.setOnClickListener(this);
         btnShare.setOnClickListener(this);
+        widgetButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return false;
+            }
+        });
+
+        widgetButton2.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return false;
+            }
+        });
+
+        widgetButton3.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return false;
+            }
+        });
+
     }
 
     @Override
